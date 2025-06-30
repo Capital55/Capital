@@ -474,7 +474,7 @@
 <p>අවම ණය මුදල: රු.40,000</p>
 <p>උපරිම ණය මුදල: රු.1000,000</p>
 <p>අවම කාල සීමාව: 6 මාස</p>
-<p>උපරිම කාල සීමාව: 36 මාස</p>
+<p>උපරිම කාල සීමාව: 48 මාස</p>
 
 <p><strong>ගණනය කිරීමේ උදාහරණය (පොළිය සහිත මාසික වාරික ක්‍රමය):</strong></p>
 <p>දින 91 (මාස 3) සදහා රු.50,000ක මුදලක් ලබා ගත් විට:</p>
@@ -501,9 +501,9 @@
     const duration = document.getElementById("duration");
     const monthlyPayment = document.getElementById("monthlyPayment");
 
-   function updateValues(value) {
+  function updateValues(value) {
   const amount = parseInt(value);
-  const interest = 0.1;
+  const interest = 0.08;
   let months = 6;
 
   if (amount > 70000) months = 12;
@@ -517,7 +517,7 @@
 
   loanAmount.textContent = amount.toLocaleString();
   repaymentAmount.textContent = Math.round(total).toLocaleString();
-  interestRate.textContent = "10%";
+  interestRate.textContent = "8%";
   duration.textContent = months;
   monthlyPayment.textContent = Math.round(monthly).toLocaleString();
 }
