@@ -478,7 +478,7 @@
 
 <p><strong>ගණනය කිරීමේ උදාහරණය (පොළිය සහිත මාසික වාරික ක්‍රමය):</strong></p>
 <p>දින 91 (මාස 3) සදහා රු.50,000ක මුදලක් ලබා ගත් විට:</p>
-<p>පොළිය රු.4,050 (Annual Rate 9%)</p>
+<p>පොළිය රු.4,050 (Annual Rate 8%)</p>
 <p>මුළු ආපසු ගෙවිය යුතු මුදල: රු.54,050</p>
 <p>මාසික වාරික ගෙවීම: රු.54,050 / 6 = රු.9,008</p>
 <p>සියලුම අදාළ ගාස්තු දැනටමත් මුළු ණය මුදලට ඇතුළත් කර ඇත.</p>
@@ -501,22 +501,26 @@
     const duration = document.getElementById("duration");
     const monthlyPayment = document.getElementById("monthlyPayment");
 
- function updateValues(value) {
+function updateValues(value) {
   const amount = parseInt(value);
-  let interest = 0.1;
+  let interest = 0;
   let months = 6;
 
-  // පොලී අනුපාතය ලක්ෂ 5 ඉක්මුවාම 15% වෙයි
-  if (amount > 500000) {
+  // පොලී අනුපාතය සදහන් කොන්දේසි අනුව
+  if (amount >= 40000 && amount <= 500000) {
+    interest = 0.08;
+  } else if (amount > 500000 && amount <= 1000000) {
     interest = 0.13;
+  } else if (amount > 1000000) {
+    interest = 0.15; // අවශ්‍ය නම් වෙනස් කරන්න
   }
 
-  // කාල සීමාව
+  // කාල සීමාව (අවශ්‍ය පරිදි)
   if (amount > 70000) months = 12;
   if (amount > 150000) months = 24;
-  if (amount > 220000) months = 24;
+  if (amount > 220000) months = 30;
   if (amount > 500000) months = 24;
-  if (amount > 800000) months = 24;
+  if (amount > 800000) months = 24; 
 
   const total = amount + amount * interest;
   const monthly = total / months;
