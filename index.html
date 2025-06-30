@@ -508,9 +508,9 @@
 
   if (amount > 70000) months = 12;
   if (amount > 150000) months = 24;
-  if (amount > 220000) months = 30;
-  if (amount > 500000) months = 36;
-  if (amount > 800000) months = 48;
+  if (amount > 220000) months = 24;
+  if (amount > 500000) months = 24;
+  if (amount > 800000) months = 24;
 
   const total = amount + amount * interest;
   const monthly = total / months;
